@@ -1,0 +1,226 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+}
+
+header .navbar{
+    padding-block: 0.8rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1D267D;
+
+    z-index: 9999;
+
+}
+
+header .navbar .nav-brand{
+    margin-inline-start: 10%;
+}
+
+header .navbar .nav-brand a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+header .navbar ul{
+    display: flex;
+    margin-inline-end: 10%;
+    gap: 2rem 2rem;
+    padding-left: 0;
+    justify-content: center;
+}
+
+header .navbar li{
+    list-style-type: none;
+}
+
+header .navbar li a{
+    padding-bottom: 0.5rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+
+    transition: all 0.2s ease-in-out;
+    border-bottom: 1px solid rgba(180, 23, 23, 0);
+}
+
+header .navbar li:hover a{
+    color: #9a110f;
+    border-bottom: 1px solid #9a110f;
+}
+
+header .navbar .menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 22px;
+    justify-content: space-between;
+}
+
+header .navbar .menu-toggle span{
+    display: block;
+    width: 27px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+main{
+    margin-top: 74px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2, h3{
+    color: #1D267D;
+}
+
+main .jumbotron{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-image: url(../image/sorong.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    position: relative;
+}
+
+main .jumbotron::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgb(0, 0, 0, 3), rgba(0, 0, 0, 0));
+    position: absolute;
+    bottom: 0;
+}
+
+main .jumbotron h1{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+#content{
+    padding: 2rem 1rem;
+    display: flex;
+    flex: 5;
+    flex-flow: column nowrap;
+    gap: 1rem 2rem;
+    line-height: 1.5rem;
+}
+
+aside{
+    flex: 2;
+    padding: 2rem 1rem;
+    line-height: 1.5rem;
+}
+
+.card{
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.featured-img{
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile img{
+    width: 200px;
+}
+.profile header{
+    text-align: center;
+}
+
+footer{
+    padding: 15px;
+    background-color: #1D267D;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+    main{
+        flex-flow: column nowrap;
+    }
+
+    main aside{
+        align-self: center;
+        padding-top: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html{
+        font-size: 80%;
+    }
+
+    header .navbar{
+        padding-block: 1rem;
+        flex-wrap: wrap;
+    }
+    header .navbar .nav-brand{
+        margin-inline-start: 7%;
+    }
+
+    header .navbar ul{
+        width: 100%;
+        flex-direction: column;
+        margin-inline-start: 7%;
+        gap: 1.5rem;
+    }
+
+    header .navbar ul.active{
+        display: none;
+    }
+
+    header .navbar .menu-toggle{
+        display: flex;
+        margin-inline-end: 7%;
+        cursor: pointer;
+    }
+
+    main{
+        margin-top: 41px;
+        flex-flow: column nowrap;
+    }
+
+    main .jumbotron{
+        height: 300px;
+    }
+
+    main aside{
+        align-self: stretch;
+    }
+}
